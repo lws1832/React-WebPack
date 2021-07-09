@@ -1,0 +1,25 @@
+.main{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main > ul >li >span{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+.sub{
+    display: inline-block;
+    position: absolute;
+    left: 20%;
+    transform: translateX(-20%);
+}
+.sc{
+    display: flex;
+    flex-direction: column;
+    width: 850px;
+    height: 100px;
+    overflow: scroll;
+}

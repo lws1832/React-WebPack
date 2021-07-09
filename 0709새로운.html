@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    const useInput = (defaultValue) =>{ //기본값 가져오기
+        const [value,setValue] = React.useState(defaultValue) //여기는 머지?
+        console.log([value,setValue])
+        const onChange = e =>{ //대문자 안쓰고 했더니 인풋박스에 값이 안적어진다.
+            const {target : {value}} = e //비구조할당문 비구조안에 비구조할당문을 사용한
+            // console.log({target : {value}} = e)
+            // e <<onChange 이벤트 발생시킨 녀석의 정보를 가지고있다.
+            // 이벤트를 발생시킨 value값을 가져오는
+            setValue(value)
+         console.log( setValue(value))
+            console.log({target:{value}})
+        }
+        return{value,onChange} //return을 상태 value와 onchange 함수표현식을 담은 객체를 변환
+    }
+    
+    const App =()=>{
+        const user = useInput('기본값') //기본값 저장
+        const name = useInput('asdasd')
+        return(
+            <>
+            <h1>hello hooks..</h1>
+            <input {...user} name="user" placeholder="아이디를 입력"/>
+            <input {...name} name="name" placeholder="이름을 입력"/>
+            <input type="text" />
+            {console.log( <input {...user} name="user" placeholder="아이디를 입력"/>)}
+            </>
+        )
+    }
+
+    ReactDOM.render(
+        <App />,
+        document.querySelector('#root')
+    )
+    </script>
+</body>
+</html>
