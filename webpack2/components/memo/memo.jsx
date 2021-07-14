@@ -8,46 +8,46 @@ const Memo=()=>{
         let {value} ={...e.target}
         setUsername(value)
     }
-    // const submit =e =>{
-    //     e.preventDefault()
-    //     console.log('submit')
-    //     //불변성
-    //     // 얕은복사 하는게 목적
-    //     const newList = [...list]
-    //     // const newList = list.slice()
-    //     newList.push(username)
-    //     setList(newList)
-    //     setUsername('')
-    // }
-    const submit = useCallback(()=>{
+    const submit =e =>{
         e.preventDefault()
+        console.log('submit')
+        //불변성
+        // 얕은복사 하는게 목적
         const newList = [...list]
+        // const newList = list.slice()
         newList.push(username)
         setList(newList)
         setUsername('')
-    },[list,username])
-    // const renderList =()=>{
-    //     // let newArr=[]
-    //     // for(let i=0; i<list.length; i++){
-    //     //     newArr.push(<li key={i}>{list[i]}</li>)
-    //     // }
-    //     let newArr = list.map((v,k)=>{
-    //         return <li key={k}>{v}</li>
-    //     })
-    //     return newArr
-        
-    //     // return(
-    //     //     list.map((v,k)=>{
-    //     //         return <li key={k}>{v}</li>
-    //     //     })
-    //     // )
-    // }
-    const renderList =useCallback(()=>{
+    }
+    // const submit = useCallback(()=>{
+    //     e.preventDefault()
+    //     const newList = [...list]
+    //     newList.push(username)
+    //     setList(newList)
+    //     setUsername('')
+    // },[list,username])
+    const renderList =()=>{
+        // let newArr=[]
+        // for(let i=0; i<list.length; i++){
+        //     newArr.push(<li key={i}>{list[i]}</li>)
+        // }
         let newArr = list.map((v,k)=>{
             return <li key={k}>{v}</li>
         })
         return newArr
-    },[list])
+        
+        // return(
+        //     list.map((v,k)=>{
+        //         return <li key={k}>{v}</li>
+        //     })
+        // )
+    }
+    // const renderList =useCallback(()=>{
+    //     let newArr = list.map((v,k)=>{
+    //         return <li key={k}>{v}</li>
+    //     })
+    //     return newArr
+    // },[list])
     // const count =() =>{
     //     return list.length
     // }
