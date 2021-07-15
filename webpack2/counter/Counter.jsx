@@ -1,5 +1,5 @@
 import React from 'react'
-import {reducer,UP,DOWN} from './reducer'
+// import {reducer,UP,DOWN} from './reducer'
 // const Counter = ()=>{
 
 //     const [number,setNumber]= React.useState(0)
